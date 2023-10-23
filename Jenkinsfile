@@ -1,3 +1,5 @@
+@Library('JENKINS_SHARED_LIB') _
+
 pipeline{
     agent any
     stages{
@@ -6,7 +8,10 @@ pipeline{
 
                 script{
 
-                    git branch: 'main', url: 'https://github.com/nakbi98/Java-devops.git'
+                   gitCheckout(
+                    branch: "main"
+                    url: "https://github.com/nakbi98/Java-devops.git"
+                   )
                 }
             }
         }
