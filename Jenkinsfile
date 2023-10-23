@@ -3,13 +3,13 @@
 pipeline{
     agent any
     stages{
-        stage('Git Chweckout'){
+        stage('Git Checkout'){
             steps{
 
                 script{
 
                    gitCheckout(
-                    branch: "main"
+                    branch: "main",
                     url: "https://github.com/nakbi98/Java-devops.git"
                    )
                 }
