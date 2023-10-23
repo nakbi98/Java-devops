@@ -6,9 +6,9 @@ pipeline{
         stage('Git checkout'){
             steps{
 
-                script{
+                script{ 
 
-                   gitcheckout(
+                   gitCheckout(
                     branch: "main",
                     url: "https://github.com/nakbi98/Java-devops.git"
                    )
