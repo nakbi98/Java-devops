@@ -8,7 +8,7 @@ pipeline{
 
                 script{
 
-                   gitCheckout(
+                   gitchekout(
                     branch: "main",
                     url: "https://github.com/nakbi98/Java-devops.git"
                    )
