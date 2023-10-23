@@ -1,31 +1,26 @@
 @Library('JENKINS_SHARED_LIB') _
 
-pipeline{
+pipeline {
     agent any
-    stages{
-        stage('Git checkout'){
-            steps{
+    stages {
+        stage('Git checkout') {
+            steps {
+                script {
+                    checkout([
+                        $class: 'GitSCM',
+                        branches: [[name: 'main']],
+                        userRemoteConfigs: [[url: 'https://github.com/nakbi98/Java-devops.git']]
+                    ])
+                }
+            }
+        }
 
-                script{ 
-
-                   gitCheckout(
-                    branch: "main",
-                    url: "https://github.com/nakbi98/Java-devops.git"
-                   )
+        stage('Unit Test maven') {
+            steps {
+                script {
+                    mvnTest()
                 }
             }
         }
     }
-
-     
-        stage('Unit Test maven'){
-            steps{
-
-                script{ 
-                 mvnTest()
-                  
-                }
-            }
-        }
-    
 }
