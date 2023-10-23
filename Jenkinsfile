@@ -3,7 +3,7 @@
 pipeline {
     agent any
     parameters{
-        choice(name: 'action', choice: 'create\ndelete', description: 'choose create/Destroy')
+    choices(name: 'action', choice: 'create\ndelete', description: 'choose create/Destroy')
     }
     stages {
         stage('Git checkout') {
