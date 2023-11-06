@@ -75,7 +75,7 @@ pipeline {
                 }
             }
         }
-         stage('Docker Image Scan') {
+        stage('Docker Image Scan') {
             when {expression { params.action =='create'}}
             steps {
                 script {
